@@ -1,0 +1,308 @@
+:root {
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-300: hsl(252, 6%, 83%);
+  --neutral-500: hsl(245, 15%, 58%);
+  --neutral-700: hsl(245, 19%, 35%);
+  --neutral-900: hsl(248, 70%, 10%);
+  --orange-500: hsl(7, 88%, 67%);
+  --orange-700: hsl(7, 71%, 60%);
+  --font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--neutral-900);
+  color: var(--neutral-0);
+  background-image: url('../assets/images/background-desktop.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.site-header .logo {
+  width: 160px;
+}
+
+/* Landing Page Styles */
+.hero-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-section h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+}
+
+.event-meta {
+  color: var(--orange-500);
+  font-weight: 600;
+}
+
+.event-desc {
+  color: var(--neutral-300);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cta-button {
+  background: var(--orange-500);
+  color: var(--neutral-900);
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  align-self: center;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: var(--orange-700);
+  color: var(--neutral-0);
+}
+
+/* Modern Selectors using :is() and :not() */
+.intro-text, .ticket-header-text {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+:is(.intro-text, .ticket-header-text) h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 0.5rem;
+}
+
+:is(.intro-text, .ticket-header-text) p {
+  color: var(--neutral-300);
+}
+
+.highlight-email {
+  color: var(--orange-500);
+}
+
+/* Form Styles with :has() pseudo-class */
+#ticket-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  color: var(--neutral-300);
+}
+
+/* Modern selector for text inputs */
+:where(.form-group input[type="text"], .form-group input[type="email"]) {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--neutral-500);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: var(--neutral-0);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* Highlight border when input is focused */
+.form-group:has(input:focus) label {
+  color: var(--orange-500);
+}
+
+:where(.form-group input):focus {
+  border-color: var(--orange-500);
+}
+
+/* Dropzone Upload */
+.dropzone {
+  border: 2px dashed var(--neutral-500);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dropzone:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.upload-icon {
+  width: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.dropzone p {
+  color: var(--neutral-300);
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#avatar-preview {
+  width: 65px;
+  height: 65px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--neutral-500);
+}
+
+.preview-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.preview-actions button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--neutral-300);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.preview-actions button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn {
+  background: var(--orange-500);
+  color: var(--neutral-900);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: var(--orange-700);
+  color: var(--neutral-0);
+}
+
+.error-msg {
+  color: var(--orange-500);
+  font-size: 0.8rem;
+}
+
+/* Glassmorphism Ticket Card */
+.ticket-card {
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.ticket-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ticket-logo {
+  width: 130px;
+}
+
+.ticket-date {
+  font-size: 0.85rem;
+  color: var(--neutral-300);
+}
+
+.ticket-user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#ticket-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--orange-500);
+}
+
+.ticket-github {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--neutral-300);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.ticket-github img {
+  width: 16px;
+}
+
+.ticket-number {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-size: 1.5rem;
+  color: var(--neutral-500);
+  font-weight: bold;
+}
+
+.site-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--neutral-500);
+  margin-top: 1rem;
+}

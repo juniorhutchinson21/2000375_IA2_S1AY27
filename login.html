@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Conf 2026 | Register</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container form-container">
+        <header class="site-header">
+            <a href="index.html">
+                <img src="assets/images/logo-full.svg" alt="Coding Conf Logo" class="logo">
+            </a>
+        </header>
+
+        <section class="form-section">
+            <div class="intro-text">
+                <h1>Secure Your Conference Pass</h1>
+                <p>Fill out your details below to generate your customized digital ticket.</p>
+            </div>
+
+            <form id="ticket-form" novalidate>
+                <!-- Avatar Upload -->
+                <div class="form-group">
+                    <label for="avatar-input">Upload Avatar (PNG/JPEG, max 500KB)</label>
+                    <div class="dropzone" id="dropzone" tabindex="0">
+                        <input type="file" id="avatar-input" accept="image/png, image/jpeg" hidden>
+                        <div id="dropzone-content">
+                            <img src="assets/images/icon-upload.svg" alt="Upload Icon" class="upload-icon">
+                            <p>Drag and drop or click to upload</p>
+                        </div>
+                        <div id="preview-container" class="hidden">
+                            <img id="avatar-preview" src="" alt="Avatar Preview">
+                            <div class="preview-actions">
+                                <button type="button" id="remove-avatar">Remove image</button>
+                                <button type="button" id="change-avatar">Change image</button>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="error-msg" id="avatar-error"></small>
+                </div>
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" placeholder="e.g. Junior Hutchinson" required>
+                    <small class="error-msg" id="name-error"></small>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="e.g. junior@example.com" required>
+                    <small class="error-msg" id="email-error"></small>
+                </div>
+
+                <!-- GitHub Username -->
+                <div class="form-group">
+                    <label for="github">GitHub Username</label>
+                    <input type="text" id="github" placeholder="e.g. @juniorhutchinson" required>
+                    <small class="error-msg" id="github-error"></small>
+                </div>
+
+                <button type="submit" class="submit-btn">Generate My Ticket</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/validation.js"></script>
+</body>
+</html>

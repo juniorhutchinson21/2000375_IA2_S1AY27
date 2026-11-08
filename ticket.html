@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Conf 2026 | Your Ticket</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container ticket-container">
+        <header class="site-header">
+            <a href="index.html">
+                <img src="assets/images/logo-full.svg" alt="Coding Conf Logo" class="logo">
+            </a>
+        </header>
+
+        <section class="ticket-display-section">
+            <div class="ticket-header-text">
+                <h1>Congrats, <span id="display-name"></span>!</h1>
+                <p>Your ticket has been generated. We've emailed your pass details to <span id="display-email" class="highlight-email"></span>.</p>
+            </div>
+
+            <!-- Glassmorphism Ticket Card -->
+            <div class="ticket-card">
+                <div class="ticket-top">
+                    <img src="assets/images/logo-full.svg" alt="Logo" class="ticket-logo">
+                    <span class="ticket-date">Oct 26, 2026 / Papine, Kingston</span>
+                </div>
+                <div class="ticket-user-info">
+                    <img id="ticket-avatar" src="" alt="User Avatar">
+                    <div>
+                        <h3 id="ticket-name"></h3>
+                        <p class="ticket-github">
+                            <img src="assets/images/icon-github.svg" alt="GitHub"> 
+                            <span id="ticket-github-handle"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="ticket-number">
+                    <span>#2026</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/ticket.js"></script>
+</body>
+</html>
